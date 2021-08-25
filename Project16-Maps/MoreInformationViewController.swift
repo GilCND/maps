@@ -8,21 +8,25 @@
 import UIKit
 import WebKit
 
-class MoreInformationViewController: UIViewController, WKNavigationDelegate {
-    var webView: WKWebView?
+class MoreInformationViewController: UIViewController {
+    var webView =  WKWebView()
     var urlString: String?
     
     override func loadView() {
         webView = WKWebView()
-        webView?.navigationDelegate = self
+        webView.navigationDelegate = self
         view = webView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let urlString = urlString else { return }
-        let url = URL(string: urlString)!
-        webView?.load(URLRequest(url: url))
-        webView?.allowsBackForwardNavigationGestures = true
+        guard let urlString = urlString, let url = URL(string: urlString) else { return }
+        webView.load(URLRequest(url: url))
+        webView.allowsBackForwardNavigationGestures = true
     }
+
+}
+
+extension MoreInformationViewController: WKNavigationDelegate {
+    
 }

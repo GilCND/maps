@@ -9,10 +9,10 @@ import MapKit
 import UIKit
 
 class Capital: NSObject, MKAnnotation {
-    var title: String?
-    var coordinate: CLLocationCoordinate2D
-    var info: String
-    var webSite: String
+    let title: String?
+    let coordinate: CLLocationCoordinate2D
+    let info: String
+    let webSite: String
     
     init(title: String, coordinate: CLLocationCoordinate2D, info: String, webSite: String) {
         self.title = title
