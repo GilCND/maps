@@ -18,6 +18,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Bi-xR-daw">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="40d-rJ-bBt"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -30,10 +33,46 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ewM-I4-SOX"/>
+                    <connections>
+                        <outlet property="mapView" destination="7Bi-xR-daw" id="hLU-ai-bvM"/>
+                        <segue destination="B7D-jI-7up" kind="showDetail" identifier="moreInformation" id="TB4-i9-wzg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757.97101449275374" y="87.723214285714278"/>
+            <point key="canvasLocation" x="951" y="-306"/>
+        </scene>
+        <!--More Information View Controller-->
+        <scene sceneID="HCk-RB-QNP">
+            <objects>
+                <viewController storyboardIdentifier="more" id="B7D-jI-7up" customClass="MoreInformationViewController" customModule="Project16_Maps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dDQ-Wh-UcO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iql-X9-WFp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Sw3-Wx-poI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Iql-X9-WFp" firstAttribute="leading" secondItem="Sw3-Wx-poI" secondAttribute="leading" id="70K-ke-M75"/>
+                            <constraint firstItem="Iql-X9-WFp" firstAttribute="centerY" secondItem="dDQ-Wh-UcO" secondAttribute="centerY" id="9iV-LS-QDG"/>
+                            <constraint firstItem="Iql-X9-WFp" firstAttribute="centerX" secondItem="dDQ-Wh-UcO" secondAttribute="centerX" id="gSu-mD-JtE"/>
+                            <constraint firstItem="Iql-X9-WFp" firstAttribute="top" secondItem="Sw3-Wx-poI" secondAttribute="top" id="hmo-D5-7KS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="m2x-hA-Akg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buo-5E-rwh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950.72463768115949" y="426.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jFb-vZ-Bb1">
